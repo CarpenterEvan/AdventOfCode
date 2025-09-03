@@ -3,7 +3,7 @@ import os
 this_folder = os.path.dirname(__file__)
 
 total_calories_per_elf = []
-with open(f"{this_folder}/input.txt", "r") as calories:
+with open(f"{this_folder}/../input.txt", "r") as calories:
 	what_each_elf_carries = calories.read().split("\n\n")
 	for food in what_each_elf_carries:
 		food_per_elf = list(map(int, food.split("\n")))
