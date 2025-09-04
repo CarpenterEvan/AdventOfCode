@@ -1,0 +1,4 @@
+*.dSYM
+__pycache__
+*.pdf
+*.png
