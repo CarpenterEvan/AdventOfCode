@@ -1,4 +1,5 @@
 *.dSYM
 __pycache__
 *.pdf
+.DS_Store
 *.png
