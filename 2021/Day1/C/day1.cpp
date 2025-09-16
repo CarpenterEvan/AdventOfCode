@@ -3,6 +3,9 @@
 #include <vector>
 
 
+
+
+
 int part1() {
 
 	FILE *filepointer;
@@ -31,7 +34,6 @@ int part1() {
 
 		while(fgets(line[current], sizeof(myString), filepointer) != NULL) {
 			
-
 			sscanf(line[current], "%d", &curr_number);
 			sscanf(line[previous], "%d", &prev_number);
 			printf("line[%d]: %s\t->%s", current, line[previous], line[current]);
@@ -46,13 +48,12 @@ int part1() {
 			previous = current;
 			current = 1 - current; 
 
-		}
-	}
+		};
+	};
 
 	fclose(filepointer);
-
 	return depth_counter;
-}
+};
 
 int part2() {
 
@@ -82,7 +83,7 @@ int part2() {
 			int first_window, second_window;
 
 			//index_counter is updated after this
-			if ( index_counter >= 3) {
+			if ( index_counter >= 3 ) {
 
 				printf("line[%d]:\n%s%s%s%s", index_counter, line[index_counter-3], line[index_counter-2], line[index_counter-1], line[index_counter]);
 				
@@ -92,20 +93,20 @@ int part2() {
 				sscanf(line[index_counter], "%d", &d);
 				first_window = a + b + c;
 				second_window = b + c + d;
-
 				if (second_window > first_window){
 					depth_counter++;
-				}
-			} 
-			index_counter = (index_counter + 1) % 4;
-		}
-	}
+				};
+			};
+
+			index_counter = ((index_counter + 1) % 4);
+
+		};
+	};
 	printf("Depth increased [[ %d ]] times\n", depth_counter);
 	fclose(filepointer);
 
 	return depth_counter;
-}
-
+};
 int main() {
 	
 	int depth = part2();
